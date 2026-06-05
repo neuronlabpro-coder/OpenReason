@@ -6,18 +6,17 @@ const PORT = parseInt(process.env.PORT ?? "3000", 10)
 const API_KEY = process.env.OPENREASON_API_KEY ?? ""
 
 // LLM provider config from env
-const LLM_PROVIDER = (process.env.LLM_PROVIDER ?? "tokaine") as
+const LLM_PROVIDER = (process.env.LLM_PROVIDER ?? "custom") as
   | "openai"
   | "anthropic"
   | "google"
   | "xai"
-  | "tokaine"
+  | "custom"
   | "mock"
 const LLM_API_KEY = process.env.LLM_API_KEY ?? ""
-// qwen-flagship → fast/general   |   qwen-flagship-deep → extended reasoning
-const LLM_MODEL = process.env.LLM_MODEL ?? "qwen-flagship"
-const LLM_SIMPLE_MODEL = process.env.LLM_SIMPLE_MODEL ?? "qwen-flagship"
-const LLM_COMPLEX_MODEL = process.env.LLM_COMPLEX_MODEL ?? "qwen-flagship-deep"
+const LLM_MODEL = process.env.LLM_MODEL ?? "deepseek-ai/DeepSeek-V4-Pro"
+const LLM_SIMPLE_MODEL = process.env.LLM_SIMPLE_MODEL ?? LLM_MODEL
+const LLM_COMPLEX_MODEL = process.env.LLM_COMPLEX_MODEL ?? LLM_MODEL
 
 init({
   provider: LLM_PROVIDER,

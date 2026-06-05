@@ -30,11 +30,11 @@ export const invoke_provider = async (
                     timeout
                 })
                 break
-            case "tokaine":
+            case "custom":
                 client = new ChatOpenAI({
                     modelName: model,
                     openAIApiKey: apiKey,
-                    configuration: { baseURL: "https://api.tokaine.co/v1" },
+                    configuration: { baseURL: process.env.LLM_BASE_URL ?? "https://api.featherless.ai/v1" },
                     timeout
                 })
                 break

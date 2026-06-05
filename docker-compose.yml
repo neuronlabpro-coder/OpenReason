@@ -8,12 +8,13 @@ services:
       PORT: "3000"
       # ── Bearer token for incoming API requests ────────────────────────────
       OPENREASON_API_KEY: ${OPENREASON_API_KEY}
-      # ── Tokaine (OpenAI-compatible) ───────────────────────────────────────
-      LLM_PROVIDER: ${LLM_PROVIDER:-tokaine}
+      # ── Proveedor OpenAI-compatible (custom = usa LLM_BASE_URL) ─────────
+      LLM_PROVIDER: ${LLM_PROVIDER:-custom}
+      LLM_BASE_URL: ${LLM_BASE_URL:-https://api.featherless.ai/v1}
       LLM_API_KEY: ${LLM_API_KEY}
-      LLM_MODEL: ${LLM_MODEL:-qwen-flagship}
-      LLM_SIMPLE_MODEL: ${LLM_SIMPLE_MODEL:-qwen-flagship}
-      LLM_COMPLEX_MODEL: ${LLM_COMPLEX_MODEL:-qwen-flagship-deep}
+      LLM_MODEL: ${LLM_MODEL:-deepseek-ai/DeepSeek-V4-Pro}
+      LLM_SIMPLE_MODEL: ${LLM_SIMPLE_MODEL:-deepseek-ai/DeepSeek-V4-Pro}
+      LLM_COMPLEX_MODEL: ${LLM_COMPLEX_MODEL:-deepseek-ai/DeepSeek-V4-Pro}
     networks:
       - dokploy-network
 
