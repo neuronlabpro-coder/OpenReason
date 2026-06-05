@@ -1,0 +1,36 @@
+services:
+  openreason:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    environment:
+      PORT: "3000"
+      # ── Bearer token for incoming API requests ────────────────────────────
+      OPENREASON_API_KEY: ${OPENREASON_API_KEY}
+      # ── Tokaine (OpenAI-compatible) ───────────────────────────────────────
+      LLM_PROVIDER: ${LLM_PROVIDER:-tokaine}
+      LLM_API_KEY: ${LLM_API_KEY}
+      LLM_MODEL: ${LLM_MODEL:-qwen-flagship}
+      LLM_SIMPLE_MODEL: ${LLM_SIMPLE_MODEL:-qwen-flagship}
+      LLM_COMPLEX_MODEL: ${LLM_COMPLEX_MODEL:-qwen-flagship-deep}
+    networks:
+      - dokploy-network
+    labels:
+      # ── Traefik routing ───────────────────────────────────────────────────
+      - "traefik.enable=true"
+      - "traefik.http.routers.openreason.rule=Host(`reasoning.shyntai.com`)"
+      - "traefik.http.routers.openreason.entrypoints=websecure"
+      - "traefik.http.routers.openreason.tls=true"
+      - "traefik.http.routers.openreason.tls.certresolver=letsencrypt"
+      - "traefik.http.services.openreason.loadbalancer.server.port=3000"
+      # HTTP → HTTPS redirect
+      - "traefik.http.routers.openreason-http.rule=Host(`reasoning.shyntai.com`)"
+      - "traefik.http.routers.openreason-http.entrypoints=web"
+      - "traefik.http.routers.openreason-http.middlewares=redirect-to-https"
+      - "traefik.http.middlewares.redirect-to-https.redirectscheme.scheme=https"
+      - "traefik.http.middlewares.redirect-to-https.redirectscheme.permanent=true"
+
+networks:
+  dokploy-network:
+    external: true

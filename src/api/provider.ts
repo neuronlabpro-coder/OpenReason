@@ -30,6 +30,14 @@ export const invoke_provider = async (
                     timeout
                 })
                 break
+            case "tokaine":
+                client = new ChatOpenAI({
+                    modelName: model,
+                    openAIApiKey: apiKey,
+                    configuration: { baseURL: "https://api.tokaine.co/v1" },
+                    timeout
+                })
+                break
             case "mock":
                 log_info("[PROVIDER] mock provider handling prompt (offline mode)")
                 return mock_response(prompt)

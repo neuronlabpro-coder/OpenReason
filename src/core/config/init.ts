@@ -2,7 +2,8 @@ import { load_memory } from "../utils/memory"
 import { reason } from "../pipeline/reason"
 
 export type openreason_config = {
-    provider: "openai" | "anthropic" | "google" | "xai" | "mock"
+    provider: "openai" | "anthropic" | "google" | "xai" | "tokaine" | "mock"
+    baseUrl?: string
     apiKey: string
     model: string
     simpleModel?: string

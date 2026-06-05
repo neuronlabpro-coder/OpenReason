@@ -1,0 +1,71 @@
+[
+  // ─── TypeScript / JavaScript ──────────────────────────────────────────────
+  {
+    "name": "TypeScript + JavaScript (Biome o ESLint)",
+    "publisher": "dbaeumer",
+    "extensionId": "dbaeumer.vscode-eslint"
+  },
+  {
+    "name": "Prettier - Code formatter",
+    "publisher": "esbenp",
+    "extensionId": "esbenp.prettier-vscode"
+  },
+  {
+    "name": "Pretty TypeScript Errors",
+    "publisher": "yoavbls",
+    "extensionId": "yoavbls.pretty-ts-errors"
+  },
+  {
+    "name": "TypeScript Importer",
+    "publisher": "pmneo",
+    "extensionId": "pmneo.tsimporter"
+  },
+
+  // ─── LangChain / LangGraph ────────────────────────────────────────────────
+  {
+    "name": "JavaScript and TypeScript Nightly",
+    "publisher": "ms-vscode",
+    "extensionId": "ms-vscode.vscode-typescript-next"
+  },
+
+  // ─── Testing ──────────────────────────────────────────────────────────────
+  {
+    "name": "Vitest (compatible con tsx)",
+    "publisher": "vitest",
+    "extensionId": "vitest.explorer"
+  },
+
+  // ─── Git ──────────────────────────────────────────────────────────────────
+  {
+    "name": "GitLens",
+    "publisher": "eamodio",
+    "extensionId": "eamodio.gitlens"
+  },
+  {
+    "name": "Git Graph",
+    "publisher": "mhutchie",
+    "extensionId": "mhutchie.git-graph"
+  },
+
+  // ─── Utilidades ───────────────────────────────────────────────────────────
+  {
+    "name": "DotENV",
+    "publisher": "mikestead",
+    "extensionId": "mikestead.dotenv"
+  },
+  {
+    "name": "Error Lens",
+    "publisher": "usernamehw",
+    "extensionId": "usernamehw.errorlens"
+  },
+  {
+    "name": "Path Intellisense",
+    "publisher": "christian-kohler",
+    "extensionId": "christian-kohler.path-intellisense"
+  },
+  {
+    "name": "Todo Tree",
+    "publisher": "gruntfuggly",
+    "extensionId": "gruntfuggly.todo-tree"
+  }
+]

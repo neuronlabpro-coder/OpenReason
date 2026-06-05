@@ -1,0 +1,154 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    // ─── Build ────────────────────────────────────────────────────────────
+    {
+      "label": "build",
+      "type": "npm",
+      "script": "build",
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared",
+        "clear": true
+      },
+      "problemMatcher": ["$tsc"]
+    },
+
+    // ─── Tests ────────────────────────────────────────────────────────────
+    {
+      "label": "test: all",
+      "type": "npm",
+      "script": "test",
+      "group": {
+        "kind": "test",
+        "isDefault": true
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared",
+        "clear": true
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "test: math",
+      "type": "shell",
+      "command": "npx tsx tests/math.test.ts",
+      "group": "test",
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared",
+        "clear": true
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "test: logic",
+      "type": "shell",
+      "command": "npx tsx tests/logic.test.ts",
+      "group": "test",
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared",
+        "clear": true
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "test: reason",
+      "type": "shell",
+      "command": "npx tsx tests/reason.test.ts",
+      "group": "test",
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared",
+        "clear": true
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "test: langgraph",
+      "type": "shell",
+      "command": "npx tsx tests/langgraph.test.ts",
+      "group": "test",
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared",
+        "clear": true
+      },
+      "problemMatcher": []
+    },
+
+    // ─── Run / CLI ────────────────────────────────────────────────────────
+    {
+      "label": "start",
+      "type": "npm",
+      "script": "start",
+      "group": "none",
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared",
+        "clear": true
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "cli: mock reason",
+      "type": "shell",
+      "command": "npx tsx src/cli/index.ts --provider mock \"prove that sqrt(2) is irrational\"",
+      "group": "none",
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared",
+        "clear": true
+      },
+      "problemMatcher": []
+    },
+
+    // ─── Benchmark ────────────────────────────────────────────────────────
+    {
+      "label": "bench",
+      "type": "npm",
+      "script": "bench",
+      "group": "none",
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared",
+        "clear": true
+      },
+      "problemMatcher": []
+    },
+
+    // ─── Utilidades ───────────────────────────────────────────────────────
+    {
+      "label": "install deps",
+      "type": "shell",
+      "command": "npm install",
+      "group": "none",
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared",
+        "clear": true
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "clean dist",
+      "type": "shell",
+      "command": "rm -rf dist",
+      "windows": {
+        "command": "if exist dist rmdir /s /q dist"
+      },
+      "group": "none",
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared"
+      },
+      "problemMatcher": []
+    }
+  ]
+}
